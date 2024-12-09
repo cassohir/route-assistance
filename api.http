@@ -1,0 +1,28 @@
+GET http://localhost:3000/places?text=Shopping Justinópolis
+
+###
+GET http://localhost:3000/places?text=Jardim de Infância Criança Esperança Belo Vale
+
+
+### 
+@originId = ChIJWdMeUeGNpgARoqL_mOMm93s
+@destinationId = ChIJ12tEixGPpgAR-0WNBHwyEnA
+
+###
+GET http://localhost:3000/directions?originId={{originId}}&destinationId={{destinationId}}
+
+###
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "rota 1",
+    "sourceId": "{{ originId }}",
+    "destinationId": "{{ destinationId }}"
+}
+
+###
+GET http://localhost:3000/routes
+
+###
+GET http://localhost:3000/routes/67575bec44d5c3b01b6fcace
